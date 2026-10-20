@@ -1,0 +1,891 @@
+/* Transiciones suaves para las diapositivas */
+.slide {
+    transition: opacity 0.7s ease-in-out;
+}
+
+/* Sombras suaves personalizadas */
+.card-shadow {
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* ===== Overlay oscuro sobre el hero ===== */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.75), rgba(0,0,0,0.3), transparent);
+}
+
+/* ===== Franja ámbar inferior del hero ===== */
+.hero-borde-inferior {
+    border-bottom: 5px solid #f59e0b;
+}
+
+/* ===== Efecto hover en tarjetas de producto ===== */
+.tarjeta-hover {
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.tarjeta-hover:hover {
+    box-shadow: 0 10px 30px -4px rgba(0, 0, 0, 0.12);
+    transform: translateY(-4px);
+}
+
+/* ===== Íconos circulares de la sección "Nuestros valores" ===== */
+.valor-icono {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    margin: 0 auto 1rem auto;
+    transition: transform 0.3s ease;
+}
+
+.valor-item:hover .valor-icono {
+    transform: translateY(-4px) scale(1.05);
+}
+
+.valor-icono.verde-oscuro { background-color: #052e16; color: #fff; }
+.valor-icono.verde        { background-color: #14532d; color: #fff; }
+.valor-icono.ambar        { background-color: #f59e0b; color: #fff; }
+.valor-icono.crema        { background-color: #fefce8; color: #92400e; border: 1px solid #fde68a; }
+
+/* =========================================================
+   CONTADOR DE CARACTERES (MENSAJE DE CONTACTO)
+   ========================================================= */
+
+.contador-mensaje {
+    display: block;
+    text-align: right;
+    font-size: 0.75rem;
+    color: #64748b;
+    margin-top: 0.25rem;
+}
+
+.contador-mensaje.limite-cerca {
+    color: #dc2626;
+    font-weight: 600;
+}
+
+/* =========================================================
+   FILTRO DE PRODUCTOS POR CATEGORÍA
+   ========================================================= */
+
+/* Transición suave para las tarjetas al mostrar u ocultar */
+.product-card {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Efecto al pasar el mouse sobre las tarjetas */
+.product-card:hover {
+    transform: translateY(-4px);
+}
+
+/* =========================================================
+   BOTONES DE CATEGORÍA
+   ========================================================= */
+
+.product-category-button.bg-white {
+    color: #064e3b;
+}
+
+/* Al pasar el mouse: fondo verde muy suave */
+.product-category-button.bg-white:hover {
+    background-color: #ecfdf5;
+    color: #064e3b;
+}
+
+/* =========================================================
+   CHATBOT AGROFRUTOS
+   ========================================================= */
+
+.chatbot-container {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 1000;
+}
+
+.chatbot-button {
+    width: 60px;
+    height: 60px;
+    border: 3px solid #ffffff;
+    border-radius: 50%;
+    background-color: #14532d;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.chatbot-button:hover {
+    background-color: #166534;
+    transform: scale(1.08);
+}
+
+.chatbot-window {
+    position: absolute;
+    right: 0;
+    bottom: 75px;
+    width: 400px;
+    height: 560px;
+    background-color: white;
+    border: 2px solid #cbd5e1;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+}
+
+.chatbot-window.hidden {
+    display: none;
+}
+
+.chatbot-header {
+    min-height: 70px;
+    padding: 15px 18px;
+    background-color: #14532d;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.chatbot-header h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.chatbot-header span {
+    display: block;
+    margin-top: 3px;
+    font-size: 12px;
+    opacity: 0.85;
+}
+
+.chatbot-close {
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.chatbot-close:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.chatbot-messages {
+    flex: 1;
+    padding: 18px;
+    background-color: #f8fafc;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.chatbot-message {
+    max-width: 80%;
+    padding: 10px 14px;
+    border-radius: 14px;
+    font-size: 14px;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+.chatbot-message-bot {
+    align-self: flex-start;
+    background-color: #dcfce7;
+    color: #14532d;
+    border-bottom-left-radius: 4px;
+}
+
+.chatbot-message-user {
+    align-self: flex-end;
+    background-color: #14532d;
+    color: white;
+    border-bottom-right-radius: 4px;
+}
+
+.chatbot-input-container {
+    padding: 12px;
+    background-color: white;
+    border-top: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.chatbot-input {
+    flex: 1;
+    min-width: 0;
+    height: 42px;
+    padding: 0 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    outline: none;
+    font-size: 14px;
+    color: #374151;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chatbot-input:focus {
+    border-color: #14532d;
+    box-shadow: 0 0 0 2px rgba(20, 83, 45, 0.12);
+}
+
+.chatbot-send {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    border: none;
+    border-radius: 10px;
+    background-color: #14532d;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.chatbot-send:hover {
+    background-color: #166534;
+    transform: scale(1.05);
+}
+
+.chatbot-messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chatbot-messages::-webkit-scrollbar-track {
+    background-color: #f1f5f9;
+}
+
+.chatbot-messages::-webkit-scrollbar-thumb {
+    background-color: #86efac;
+    border-radius: 10px;
+}
+
+#btnScrollTop {
+    bottom: 96px;
+}
+
+@media (max-width: 640px) {
+    .chatbot-container {
+        right: 16px;
+        bottom: 16px;
+    }
+
+    .chatbot-button {
+        width: 55px;
+        height: 55px;
+        font-size: 22px;
+    }
+
+    .chatbot-window {
+        right: 0;
+        bottom: 68px;
+        width: calc(100vw - 32px);
+        max-width: 400px;
+        height: 520px;
+    }
+
+    #btnScrollTop {
+        right: 16px;
+        bottom: 88px;
+    }
+}
+
+/* =========================================================
+   NAVEGACIÓN: INDICADOR DE PÁGINA ACTIVA
+   ========================================================= */
+
+.nav-link {
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 3px;
+    border-radius: 9999px;
+    background: linear-gradient(90deg, #f59e0b, #fcd34d, #f59e0b);
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.45);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+.nav-link:hover::after {
+    transform: scaleX(0.5);
+}
+
+.nav-link.active {
+    color: #14532d;
+    font-weight: 700;
+}
+
+.nav-link.active::after {
+    transform: scaleX(1);
+}
+
+.btn-contacto.active {
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px #f59e0b;
+}
+
+.nav-movil.active {
+    color: #14532d;
+    background-color: #f0fdf4;
+    border-left: 4px solid #f59e0b;
+    padding-left: 0.75rem;
+    border-radius: 0.5rem;
+}
+
+.ring-amber {
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px #f59e0b;
+}
+
+/* =========================================================
+   OCULTAR COMPLETAMENTE EL BANNER DE GOOGLE TRANSLATE
+   ========================================================= */
+
+.goog-te-banner-frame,
+.goog-te-banner-frame.skiptranslate,
+.VIpgJd-Z443bf-G3283e,
+.VIpgJd-Z443bf-G3283e-b4931e,
+iframe.goog-te-banner-frame {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    width: 0 !important;
+}
+
+body {
+    top: 0px !important;
+    position: static !important;
+    min-height: 100vh !important;
+}
+
+#goog-gt-tt, 
+.goog-te-balloon-frame,
+.goog-tooltip,
+.goog-tooltip:hover {
+    display: none !important;
+}
+
+.goog-text-highlight {
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+.skiptranslate {
+    display: none !important;
+}
+
+#navbarHeader .skiptranslate,
+#menuMovil .skiptranslate {
+    display: block !important;
+}
+
+/* =========================================================
+   ANIMACIÓN PARA SUAVIZAR EL PARPADEO DEL TRADUCTOR
+   ========================================================= */
+
+html.translated-ltr body, 
+html.translated-rtl body {
+    animation: fadeInTranslate 0.2s ease-in-out;
+}
+
+@keyframes fadeInTranslate {
+    from {
+        opacity: 0.7;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* ===== LLUVIA DE FRUTAS EN EL CHATBOT ===== */
+.chatbot-body {
+    position: relative;
+    flex: 1;
+    min-height: 0;
+    background-color: #f8fafc;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.chatbot-body .chatbot-messages {
+    position: relative;
+    z-index: 1;
+    background-color: transparent;
+}
+
+.chatbot-rain {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.fruta-lluvia {
+    position: absolute;
+    top: -50px;
+    opacity: 0.5;
+    line-height: 1;
+    user-select: none;
+    animation: frutaCae linear forwards;
+}
+
+.fruta-lluvia svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+@keyframes frutaCae {
+    from { transform: translateY(0) rotate(0deg); }
+    to   { transform: translateY(650px) rotate(360deg); }
+}
+
+/* ===== ANIMACIÓN DEL LOGO AL INGRESAR AL SITIO ===== */
+
+.logo-page-transition {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #064e3b;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.logo-page-transition.is-visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.logo-page-transition__content {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: clamp(1.2rem, 4vw, 2rem);
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    opacity: 0;
+    transform: scale(0.7) translateY(15px);
+}
+
+.logo-page-transition.is-visible .logo-page-transition__content {
+    animation: agroLogoEntrada 0.55s ease forwards;
+}
+
+.logo-page-transition__icon {
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #065f46;
+    color: #fbbf24;
+    font-size: 1.7rem;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes agroLogoEntrada {
+    0% { opacity: 0; transform: scale(0.7) translateY(15px); }
+    65% { opacity: 1; transform: scale(1.08) translateY(0); }
+    100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .logo-page-transition,
+    .logo-page-transition__content {
+        transition: none;
+        animation-duration: 0.01ms !important;
+    }
+}
+/* =========================================================
+   MODO OSCURO: BOTONES DE TEMA
+   ========================================================= */
+
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background-color: #f8fafc;
+    color: #334155;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background-color: #e2e8f0;
+}
+
+.theme-toggle i {
+    font-size: 15px;
+}
+
+.theme-toggle:focus-visible {
+    outline: 3px solid #f59e0b;
+    outline-offset: 3px;
+}
+
+.theme-toggle-mobile {
+    width: 100%;
+    justify-content: flex-start;
+}
+
+/* =========================================================
+   MODO OSCURO: FONDO Y ELEMENTOS GENERALES
+   ========================================================= */
+
+body,
+#navbarHeader,
+#menuMovil,
+main,
+.theme-toggle,
+input,
+textarea,
+select {
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+body.dark-mode {
+    background-color: #111827 !important;
+    color: #e5e7eb !important;
+}
+
+/* Encabezado y menú móvil */
+body.dark-mode #navbarHeader,
+body.dark-mode #menuMovil {
+    background-color: #1f2937 !important;
+    border-color: #374151 !important;
+}
+
+/* Logo */
+body.dark-mode #logoAgrofrutos > span {
+    color: #d1fae5 !important;
+}
+
+/* Botón hamburguesa */
+body.dark-mode #btnMenu {
+    color: #d1fae5 !important;
+}
+
+/* Fondos claros de Tailwind */
+body.dark-mode .bg-white {
+    background-color: #1f2937 !important;
+}
+
+body.dark-mode .bg-slate-50,
+body.dark-mode .bg-gray-50 {
+    background-color: #111827 !important;
+}
+
+body.dark-mode .bg-slate-100,
+body.dark-mode .bg-gray-100 {
+    background-color: #1f2937 !important;
+}
+
+body.dark-mode .bg-slate-200,
+body.dark-mode .bg-gray-200 {
+    background-color: #374151 !important;
+}
+
+/* Textos oscuros de Tailwind */
+body.dark-mode .text-slate-900,
+body.dark-mode .text-slate-800,
+body.dark-mode .text-slate-700,
+body.dark-mode .text-gray-900,
+body.dark-mode .text-gray-800,
+body.dark-mode .text-gray-700 {
+    color: #f3f4f6 !important;
+}
+
+body.dark-mode .text-slate-600,
+body.dark-mode .text-slate-500,
+body.dark-mode .text-gray-600,
+body.dark-mode .text-gray-500 {
+    color: #d1d5db !important;
+}
+
+body.dark-mode .text-slate-400,
+body.dark-mode .text-gray-400 {
+    color: #9ca3af !important;
+}
+
+/* Bordes */
+body.dark-mode .border-slate-100,
+body.dark-mode .border-slate-200,
+body.dark-mode .border-gray-100,
+body.dark-mode .border-gray-200 {
+    border-color: #374151 !important;
+}
+
+/* Enlaces */
+body.dark-mode nav a,
+body.dark-mode #menuMovil a {
+    color: #e5e7eb;
+}
+
+body.dark-mode nav a:hover,
+body.dark-mode #menuMovil a:hover {
+    color: #fbbf24;
+}
+
+body.dark-mode .nav-link.active,
+body.dark-mode .nav-movil.active {
+    color: #fbbf24 !important;
+}
+
+body.dark-mode .nav-movil.active {
+    background-color: #374151 !important;
+}
+
+/* Botón de idioma */
+body.dark-mode #navbarHeader button:not(.theme-toggle) {
+    border-color: #4b5563;
+}
+
+/* Formularios */
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+    background-color: #1f2937;
+    color: #f3f4f6;
+    border-color: #4b5563;
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+    color: #9ca3af;
+}
+
+body.dark-mode input:focus,
+body.dark-mode textarea:focus,
+body.dark-mode select:focus {
+    border-color: #f59e0b;
+    outline-color: #f59e0b;
+}
+
+/* Tablas */
+body.dark-mode table {
+    color: #e5e7eb;
+}
+
+body.dark-mode th {
+    background-color: #1f2937;
+    color: #f9fafb;
+}
+
+body.dark-mode td {
+    border-color: #374151;
+}
+
+/* Sombras */
+body.dark-mode .card-shadow,
+body.dark-mode .tarjeta-hover {
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.35);
+}
+
+/* Botones verdes de acción */
+body.dark-mode button.bg-green-600,
+body.dark-mode button.bg-emerald-600,
+body.dark-mode a.bg-green-600,
+body.dark-mode a.bg-emerald-600 {
+    color: #ffffff !important;
+}
+
+/* Botones de tema en modo oscuro */
+body.dark-mode .theme-toggle {
+    background-color: #374151;
+    color: #f9fafb;
+    border-color: #4b5563;
+}
+
+body.dark-mode .theme-toggle:hover {
+    background-color: #4b5563;
+}
+
+/* =========================================================
+   MODO OSCURO: FILTROS DE PRODUCTOS
+   ========================================================= */
+
+body.dark-mode .product-category-button.bg-white {
+    background-color: #1f2937 !important;
+    color: #d1fae5 !important;
+    border-color: #4b5563 !important;
+}
+
+body.dark-mode .product-category-button.bg-white:hover {
+    background-color: #374151 !important;
+    color: #ffffff !important;
+}
+
+/* =========================================================
+   MODO OSCURO: CHATBOT
+   ========================================================= */
+
+body.dark-mode .chatbot-window {
+    background-color: #1f2937;
+    border-color: #4b5563;
+}
+
+body.dark-mode .chatbot-body,
+body.dark-mode .chatbot-messages {
+    background-color: #111827;
+}
+
+body.dark-mode .chatbot-message-bot {
+    background-color: #1f3b2d;
+    color: #d1fae5;
+}
+
+body.dark-mode .chatbot-input-container {
+    background-color: #1f2937;
+    border-color: #374151;
+}
+
+body.dark-mode .chatbot-input {
+    background-color: #111827;
+    color: #f3f4f6;
+    border-color: #4b5563;
+}
+
+body.dark-mode .chatbot-messages::-webkit-scrollbar-track {
+    background-color: #1f2937;
+}
+
+body.dark-mode .chatbot-messages::-webkit-scrollbar-thumb {
+    background-color: #4b5563;
+}
+
+/* =========================================================
+   ACCESIBILIDAD Y MOVIMIENTO REDUCIDO
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .logo-page-transition,
+    .logo-page-transition__content,
+    body,
+    #navbarHeader,
+    #menuMovil,
+    main,
+    .theme-toggle,
+    input,
+    textarea,
+    select {
+        transition: none;
+        animation-duration: 0.01ms !important;
+    }
+}
+/* =========================================================
+   MODO OSCURO: COLORES EMERALD / AMBER / VERDES
+   ========================================================= */
+
+/* ----- Fondos ----- */
+body.dark-mode .bg-emerald-50 { background-color: #0f1f1a !important; }
+body.dark-mode .bg-emerald-50\/50 { background-color: #111827 !important; }
+body.dark-mode .bg-emerald-50\/70 { background-color: #12261f !important; }
+body.dark-mode .bg-emerald-50\/80 { background-color: #1f2937 !important; }
+body.dark-mode .bg-amber-50\/70 { background-color: #2a2112 !important; }
+body.dark-mode .bg-emerald-100 { background-color: #064e3b !important; }
+body.dark-mode .bg-emerald-600 { background-color: #065f46 !important; }
+body.dark-mode .bg-slate-200\/80 { background-color: #374151 !important; }
+body.dark-mode .hover\:bg-slate-200:hover { background-color: #374151 !important; }
+body.dark-mode .hover\:bg-slate-100:hover { background-color: #374151 !important; }
+
+/* Cajas de las fotos de productos (las fotos tienen fondo blanco) */
+body.dark-mode .product-card .bg-emerald-50 { background-color: #f8fafc !important; }
+
+/* ----- Bordes ----- */
+body.dark-mode .border-emerald-100,
+body.dark-mode .border-emerald-200,
+body.dark-mode .border-emerald-200\/80,
+body.dark-mode .border-slate-300,
+body.dark-mode .border-slate-200\/60 { border-color: #374151 !important; }
+body.dark-mode .border-amber-100 { border-color: #5a4416 !important; }
+body.dark-mode .hover\:border-slate-300:hover { border-color: #6b7280 !important; }
+
+/* ----- Textos verdes oscuros (títulos que se perdían) ----- */
+body.dark-mode .text-emerald-800,
+body.dark-mode .text-green-700,
+body.dark-mode .text-green-800 { color: #6ee7b7 !important; }
+
+body.dark-mode .text-emerald-900,
+body.dark-mode .text-green-900 { color: #a7f3d0 !important; }
+
+body.dark-mode .text-emerald-950,
+body.dark-mode .text-green-950 { color: #ecfdf5 !important; }
+
+body.dark-mode .hover\:text-emerald-800:hover { color: #6ee7b7 !important; }
+
+/* Botones claros mantienen su texto oscuro (AÑADIR, Enviar mensaje, volver arriba) */
+body.dark-mode button.text-slate-900 { color: #0f172a !important; }
+body.dark-mode button.text-emerald-950 { color: #052e16 !important; }
+
+/* ----- Líneas decorativas junto a la hojita de los títulos ----- */
+body.dark-mode .h-\[1px\].bg-emerald-800 { background-color: #6ee7b7 !important; }
+
+/* ----- Íconos de "Nuestros valores" ----- */
+body.dark-mode .valor-icono.verde-oscuro { background-color: #14532d; }
+body.dark-mode .valor-icono.verde { background-color: #166534; }
+body.dark-mode .valor-icono.crema {
+    background-color: #1f2937;
+    color: #fcd34d;
+    border-color: #78350f;
+}
+
+/* ----- Otros detalles ----- */
+body.dark-mode .contador-mensaje { color: #9ca3af; }
+body.dark-mode .contador-mensaje.limite-cerca { color: #f87171; }
+body.dark-mode .btn-contacto.active,
+body.dark-mode .ring-amber { box-shadow: 0 0 0 2px #1f2937, 0 0 0 4px #f59e0b; }
+
+/* ----- Arreglo del ícono de Misión/Visión (se veía como barra ancha) ----- */
+.w-14 { width: 3.5rem; }
+.h-14 { height: 3.5rem; }
